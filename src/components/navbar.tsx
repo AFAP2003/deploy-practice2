@@ -1,4 +1,4 @@
-import { ButtonNavbar, ButtonProfile } from "./buttons";
+import { ButtonNavbar} from "./buttons";
 export function Navbar() {
     return (
         <>
