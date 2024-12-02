@@ -21,7 +21,7 @@ export function CardPortfolio({imageSrc,text,title}:CardPortfolioProps){
     return(
        
 
-<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow bg-white ">
+<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
     <div className="flex flex-row justify-center bg-[#F5FCFF]">
     <img className="rounded-t-lg h-[224px] " src={imageSrc} alt="" />
 

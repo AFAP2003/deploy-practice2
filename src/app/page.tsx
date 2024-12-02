@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Navbar } from "@/components/navbar";
 import { ButtonProfile, ButtonPortfolio,ButtonSubmit } from "@/components/buttons"
 import { Card, CardPortfolio } from "@/components/cards"
