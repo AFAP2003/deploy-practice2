@@ -4,8 +4,6 @@ import { Card, CardPortfolio } from "@/components/cards"
 import { Footer } from "@/components/footer"
 import contentfulClient from "@/contentful/contentfulClient";
 import { TypePortfolioSkeleton,IContentfulAsset } from "@/contentful/types/portfolio.types";
-import Image from "next/image";
-import Link from "next/link";
 
 const getBlogPostsContentful = async ()=>{
   try{

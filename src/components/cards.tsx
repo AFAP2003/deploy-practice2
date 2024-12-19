@@ -1,4 +1,3 @@
-import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
 type CardProps = {
     imageSrc: string;
