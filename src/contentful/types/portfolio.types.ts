@@ -15,7 +15,7 @@ export interface IContentfulAsset {
     fields:{
         file:{
             url:string,
-            detail?:any,
+            detail?:string,
             filename?:string,
             contentType?:string
         }
