@@ -17,10 +17,10 @@ type CardPortfolioProps = {
     imageSrc: string;
     title: string;
     time:string; // Explicitly declare the type for imageSrc
-    bodyOne:any;
-    bodyTwo:any;
-    bodyThree:any;
-    bodyFour:any;
+    bodyOne:string | undefined;
+    bodyTwo:string | undefined;
+    bodyThree:string | undefined;
+    bodyFour:string | undefined;
 };
 export function CardPortfolio({ imageSrc,  title,time,bodyOne,bodyTwo,bodyThree,bodyFour }: CardPortfolioProps) {
     return (
