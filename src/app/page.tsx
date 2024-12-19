@@ -4,7 +4,6 @@ import { Card, CardPortfolio } from "@/components/cards"
 import { Footer } from "@/components/footer"
 import contentfulClient from "@/contentful/contentfulClient";
 import { TypePortfolioSkeleton,IContentfulAsset } from "@/contentful/types/portfolio.types";
-
 const getBlogPostsContentful = async ()=>{
   try{
     const data = await contentfulClient.getEntries<TypePortfolioSkeleton>({
@@ -114,7 +113,7 @@ export default async function Home() {
 
         <div className="flex flex-col  items-center sm:items-start   sm:items-center gap-[40px] mt-[50px] px-4 sm:px-0">
       {
-        posts && posts.items?.map((blog,idx)=>
+        posts && posts.items?.map((blog)=>
           <>
            <CardPortfolio imageSrc={`https:${
                 (blog.fields.image as IContentfulAsset)?.fields.file.url
