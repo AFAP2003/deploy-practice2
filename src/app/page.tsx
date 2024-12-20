@@ -1,23 +1,58 @@
+"use client"
 import { Navbar } from "@/components/navbar";
 import { ButtonProfile, ButtonPortfolio, ButtonSubmit } from "@/components/buttons"
 import { Card, CardPortfolio } from "@/components/cards"
 import { Footer } from "@/components/footer"
 import contentfulClient from "@/contentful/contentfulClient";
 import { TypePortfolioSkeleton,IContentfulAsset } from "@/contentful/types/portfolio.types";
+import { useState,useEffect } from "react";
+
 const getBlogPostsContentful = async ()=>{
   try{
     const data = await contentfulClient.getEntries<TypePortfolioSkeleton>({
       content_type: 'portfolio', // Specify the content type ID for "portfolio"
 
     });
+
+    const result = data.items.map((item)=>
+    ({
+      image:  (item.fields.image as IContentfulAsset)?.fields.file.url || "",
+      title: item.fields.title || '',
+      date: item.fields.date || '',
+      bodyOne: item.fields.bodyOne || '',
+      bodyTwo: item.fields.bodyTwo || '',
+      bodyThree:item.fields.bodyThree || '',
+      bodyFour: item.fields.bodyFour || ''
+    })
+    )
     console.log(data.items)
-    return data
+    return result
   } catch(err){
     console.log(err)
   }
 }
-export default async function Home() {
-  const posts = await getBlogPostsContentful();
+
+type ProcessedPortfolio = {
+  image: string;
+  title: string;
+  date: string;
+  bodyOne: string;
+  bodyTwo: string;
+  bodyThree: string;
+  bodyFour: string;
+};
+export default function Home() {
+  const [posts, setPosts] = useState<ProcessedPortfolio[] | undefined>([]);
+
+  // Fetch Contentful data on component mount
+  useEffect(() => {
+    const loadContentfulData = async () => {
+      const data = await getBlogPostsContentful();
+      setPosts(data);
+    };
+
+    loadContentfulData();
+  }, []);
 
   return (
     <div>
@@ -113,21 +148,17 @@ export default async function Home() {
 
         <div className="flex flex-col  items-center sm:items-start   sm:items-center gap-[40px] mt-[50px] px-4 sm:px-0">
       {
-        posts && posts.items?.map((blog)=>
+        posts && posts.map((blog)=>
           <>
-           <CardPortfolio imageSrc={`https:${
-                (blog.fields.image as IContentfulAsset)?.fields.file.url
-              }`}
-               title={blog.fields.title} time={blog.fields.date} 
-               bodyOne={blog.fields.bodyOne}
-
-               bodyTwo={blog.fields.bodyTwo}
-
-               bodyThree={blog.fields.bodyThree}
-
-               bodyFour={blog.fields.bodyOne}
-
-               />
+            <CardPortfolio
+    imageSrc={`https:${blog.image}`}
+    title={blog.title}
+    time={blog.date}
+    bodyOne={blog.bodyOne}
+    bodyTwo={blog.bodyTwo}
+    bodyThree={blog.bodyThree}
+    bodyFour={blog.bodyFour}
+  />
          
           </>
         )
