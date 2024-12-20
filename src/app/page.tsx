@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import contentfulClient from "@/contentful/contentfulClient";
 import { TypePortfolioSkeleton,IContentfulAsset } from "@/contentful/types/portfolio.types";
 import { useState,useEffect } from "react";
+import { Carousel,CarouselTwo,CarouselThree } from "@/components/carousel";
 
 const getBlogPostsContentful = async ()=>{
   try{
@@ -88,7 +89,7 @@ export default function Home() {
       </div>
 
 
-      <div className="bg-white sm:h-[4500px] h-auto ">
+      <div className="bg-white sm:h-[5000px] h-auto ">
 
         
       <div className="flex flex-col sm:flex-row sm:justify-between sm:pt-[100px] sm:ml-[200px]">
@@ -165,9 +166,19 @@ export default function Home() {
       }
 
          
-
+ 
+        </div>
+        <div className="flex flex-col  mt-[100px] gap-[50px]">
+        <div className="flex justify-center">
+          <span className="sm:text-[50px] text-[30px] font-bold text-black">Testimonials</span>
+        </div>
+        <div className="flex sm:flex-row flex-col gap-4 px-[20px]">
+        <Carousel />
+          <CarouselTwo/>
+          <CarouselThree/>
         </div>
 
+        </div>
 
 
         <div className="text-black flex flex-col sm:justify-center sm:items-center sm:mt-[100px] p-4 sm:p-0">
@@ -233,7 +244,7 @@ export default function Home() {
         </div>
       </div>
 
-
+     
 
       <Footer />
 
