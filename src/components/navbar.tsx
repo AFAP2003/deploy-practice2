@@ -10,6 +10,7 @@ export function Navbar() {
                     <a href="#navbar" className=" hover:text-[#5E3BEE]">Home</a>
                     <a href="#portfolio" className=" hover:text-[#5E3BEE]">Portfolio</a>
                     <a href="#about" className=" hover:text-[#5E3BEE]">About me</a>
+                    <a href="#testimonial" className="hover:text-[#5E3BEE]">Testimonial</a>
                     <a href="#contact" className=" hover:text-[#5E3BEE]">Contact</a>
                 </div>
                 <div className="sm:flex sm:items-center sm:mr-[50px] mt-[16px] sm:mt-[0px]">

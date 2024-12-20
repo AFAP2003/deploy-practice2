@@ -8,6 +8,7 @@ export function Footer() {
                     <a href="#navbar" className="hover:text-[#5E3BEE]">Home</a>
                     <a href="#portfolio" className="hover:text-[#5E3BEE]">Portfolio</a>
                     <a href="#about" className="hover:text-[#5E3BEE]">About me</a>
+                    <a href="#testimonial" className="hover:text-[#5E3BEE]">Testimonial</a>
                     <a href="#contact" className="hover:text-[#5E3BEE]">Contact</a>
                 </div>
                 <div className="flex flex-row  sm:gap-[10px] gap-[15px] items-center mt-4 sm:mt-0" >

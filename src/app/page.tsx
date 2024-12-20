@@ -170,7 +170,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col  mt-[100px] gap-[50px]">
         <div className="flex justify-center">
-          <span className="sm:text-[50px] text-[30px] font-bold text-black">Testimonials</span>
+          <span className="sm:text-[50px] text-[30px] font-bold text-black" id="testimonial">Testimonials</span>
         </div>
         <div className="flex sm:flex-row flex-col gap-4 px-[20px]">
         <Carousel />
